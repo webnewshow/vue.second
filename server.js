@@ -33,6 +33,25 @@ app.get('/rec',function(request,response){
         }
     })   
 });
+// 详情页获取
+app.get('/details',function(request,response){
+    let id = request.query.data
+    id=JSON.parse(id).newsId
+    // 查询数据库数据
+    connect.query('select * from rec where id=?',id,function(error,data){
+        if(!error){
+            response.json({
+                status:200,
+                data:data
+            })
+        }else{
+            response.json({
+                status:500,
+                data:[]
+            }) 
+        }
+    })   
+});
 app.get('/hot',function(request,response){
     // 查询数据库数据
     connect.query('select * from hot order by id desc',function(error,data){

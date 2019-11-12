@@ -9,9 +9,10 @@
     </div>
     <div class="infinite-list-wrapper" style="overflow:auto">
       <ul class="list" infinite-scroll-disabled="disabled">
-        <li v-for="i in rec" class="list-item">
+        <li v-for="i in rec" class="list-item" :key="i.id">
           <div class="newsMinBox">
             <h2>{{ i.title }}</h2>
+            <router-link :to="'/details/' + i.id">查看详情</router-link>
             <p>{{i.time}}</p>
             <p class="NewsContent">{{i.content}}</p>
           </div>
@@ -31,6 +32,7 @@ import img2 from "@/assets/img2.jpg";
 import img3 from "@/assets/img3.jpg";
 import img4 from "@/assets/img4.jpg";
 import img5 from "@/assets/img5.jpg";
+import moment from 'moment';
 export default {
   data() {
     return {
@@ -50,6 +52,7 @@ export default {
         res = res.data;
         this.rec = res.data;
       }
+      
     });
   },
   computed: {
@@ -85,15 +88,15 @@ export default {
   margin: 0;
   position: relative;
 }
-/* h3 p{
-  position: absolute;
-  top:0
-} */
 .el-carousel__item h3 img{
   height:100%;
   width: 100%;
 }
 .el-carousel__indicators--outside button{
   background-color: #ff2d52
+}
+a{
+  text-decoration: none;
+  color: #ff2d52;
 }
 </style>

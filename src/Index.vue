@@ -2,24 +2,20 @@
   <div class="index">
     <Top/>
     <div class="clearfix" style="margin-top:5px">
-    <Tabnews/>
-    <!-- <Left/>
-    <Right/> -->
+      <router-view></router-view>
+    </div>
+    <div>
+      <router-view name='details'></router-view>
     </div>
    </div>
 </template>
 
 <script>
 import Top from './components/Top'
-import Tabnews from './components/Tabnews'
-// import Left from './components/Left'
-// import Right from './components/Right'
+import axios from 'axios'
 export default {
   components: {
-    Top,
-    Tabnews
-    // Left,
-    // Right
+    Top
   }
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
   <div class="infinite-list-wrapper" style="overflow:auto">
     <ul class="list"  infinite-scroll-disabled="disabled">
-      <li v-for="i in rec" class="list-item">
+      <li v-for="i in rec" class="list-item" :key="i.id">
         <div class="newsMinBox">
           <h2>{{ i.title }}</h2>
-          <p>{{i.time}}</p>
+          <p>{{i.TIME}}</p>
           <p class="NewsContent">{{i.content}}</p>
         </div>
       </li>

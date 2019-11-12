@@ -6,16 +6,16 @@ import App from './Index'
 // 引入element ui
 import Elementui from 'element-ui'
 // 引入ROUTER
-import Router from 'vue-router'
+import router from './router/router'
 // 引入CSS样式
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.use(Elementui)
-Vue.use(Router)
 new Vue({
   el: '#app',
+  router,
   components: { App },
   template: '<App/>'
 })

@@ -7,15 +7,18 @@
     <div>
       <router-view name='details'></router-view>
     </div>
+    <User/>
    </div>
 </template>
 
 <script>
 import Top from './components/Top'
+import User from './components/User'
 import axios from 'axios'
 export default {
   components: {
-    Top
+    Top,
+    User
   }
 }
 </script>

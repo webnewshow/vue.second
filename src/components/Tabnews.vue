@@ -43,4 +43,7 @@ export default {
 .el-tabs--left .el-tabs__item.is-left{
     text-align: center;
 }
+.el-tabs__content{
+  max-width: 900px;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-container v-for="i in rec" :key="rec.id">
+        <el-container v-for="i in rec" :key="i.id">
         <el-header>{{i.title}}</el-header>
         <el-header>{{i.time}}</el-header>
         <el-main>{{i.content}}</el-main>
@@ -42,5 +42,9 @@ export default {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+}
+.el-container{
+    max-width: 900px;
+    margin: 0 auto;
 }
 </style>

@@ -2,8 +2,9 @@
   <div class="user-login">
     <el-collapse v-model="activeName" accordion>
       <el-collapse-item title="登录" name="1">
+        <form>
         <div>
-          <input type="text" name="user" placeholder="邮箱" />
+          <input type="text" name="user" placeholder="邮箱" :value="name" @change="changeName"/>
         </div>
         <div>
           <input type="password" name="password" placeholder="密码" />
@@ -13,6 +14,7 @@
             <i class="el-icon-check"></i>
           </div>
         </div>
+        </form>
         </el-collapse-item>
         <el-collapse-item title="注册" name="2">
         <form>
@@ -47,7 +49,20 @@ export default {
       activeName: "1"
     };
   },
-  mounted() {}
+  computed:{
+    name(){
+      return this.$store.state.value
+    }
+  },
+  methods:{
+    changeName(e){
+        let name=e.target.value
+        this.$store.commit('changesValue',name)
+    }
+  },
+  mounted() {
+    
+  }
 };
 </script>
 

@@ -9,6 +9,9 @@ import Elementui from 'element-ui'
 import router from './router/router'
 // 引入CSS样式
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
+// 引入VUEX
+import store from './store/store'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -16,6 +19,7 @@ Vue.use(Elementui)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     noMore() {
-      return this.rec.length >= 10;
+      return this.rec.length >= 5;
     },
     disabled() {
       return this.loading || this.noMore;

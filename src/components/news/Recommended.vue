@@ -8,7 +8,7 @@
       </el-carousel>
     </div>
     <div class="infinite-list-wrapper" style="overflow:auto">
-      <ul class="list" infinite-scroll-disabled="disabled">
+      <ul class="list">
         <li v-for="i in rec" class="list-item" :key="i.id">
           <div class="newsMinBox">
             <h2>{{ i.title }}</h2>
@@ -18,8 +18,6 @@
           </div>
         </li>
       </ul>
-      <p v-if="loading">加载中...</p>
-      <p v-if="noMore">没有更多了</p>
     </div>
   </div>
 </template>
@@ -54,16 +52,8 @@ export default {
       }
       
     });
-  },
-  computed: {
-    noMore() {
-      return this.rec.length >= 5;
-    },
-    disabled() {
-      return this.loading || this.noMore;
-    }
   }
-};
+} 
 </script>
 
 <style>
@@ -93,7 +83,7 @@ export default {
   width: 100%;
 }
 .el-carousel__indicators--outside button{
-  background-color: #ff2d52
+  background-color: #ff2d52;
 }
 a{
   text-decoration: none;
